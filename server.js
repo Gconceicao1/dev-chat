@@ -41,4 +41,4 @@ io.on('connection', socket => {
   });
 });
 //usar a porta 3000 local 
-server.listen(8000);
+server.listen(process.env.PORT || 8000);
