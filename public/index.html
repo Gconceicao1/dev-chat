@@ -37,11 +37,11 @@
         <!-- Primeiro input para informar o nome -->
         <input type="text" class="form-control" name="username" placeholder="Informe seu nome">
         <!-- Onde vão ficar as mensagens -->
-        <div class="messages form-control" id="wrap"></div>
+        <div class="messages form-control"></div>
         <!-- Input para informar a mensagem -->
-        <input type="text" class="form-control" name="message" placeholder="Escreva a sua mensagem">
+        <input type="text" class="form-control" name="message" id="msg" placeholder="Escreva a sua mensagem">
         <!-- Butão para enviar a mensagem -->
-        <button class='btn btn-success form-control' type="submit">Enviar Mensagem</button>
+        <button class='btn btn-success form-control' type="submit" >Enviar Mensagem</button>
       </form>
     </div>
   </div>
@@ -96,11 +96,12 @@
         renderMessage(messageObject);
         // enviar o objeto 
         socket.emit('sendMessage', messageObject);
-
-
+        var msg = document.getElementById('msg');
+          msg.value = ""
+          msg.focus()
       }
     });
-
+       
 
   </script>
 </body>
